@@ -28,6 +28,19 @@ const pageTitle = title ? `${title} · ${site.shortName}` : `${site.name} · Por
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {/* Set the theme before first paint to avoid a flash of the wrong theme. */}
+    <script is:inline>
+      (function () {
+        // Dark is the default theme. A saved choice from the toggle still wins.
+        try {
+          document.documentElement.dataset.theme =
+            localStorage.getItem('theme') || 'dark';
+        } catch (e) {
+          document.documentElement.dataset.theme = 'dark';
+        }
+      })();
+    </script>
+    <meta name="theme-color" content="#0f1512" />
     <link rel="icon" type="image/png" href={`${import.meta.env.BASE_URL}scientist.png`} />
     <link rel="apple-touch-icon" href={`${import.meta.env.BASE_URL}scientist.png`} />
     <meta name="generator" content={Astro.generator} />

@@ -1,5 +1,6 @@
 ---
 import { nav, site } from '../data/site.ts';
+import Icon from './Icon.astro';
 
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 // Normalise current path for active-state comparison.
@@ -29,32 +30,39 @@ function withBase(href: string) {
       />
     </a>
 
-    <nav class="nav" aria-label="Primary">
-      <button
-        class="nav__toggle"
-        aria-expanded="false"
-        aria-controls="nav-menu"
-        aria-label="Toggle navigation menu"
-      >
-        <span class="nav__bars"></span>
-      </button>
+    <div class="header__right">
+      <nav class="nav" aria-label="Primary">
+        <button
+          class="nav__toggle"
+          aria-expanded="false"
+          aria-controls="nav-menu"
+          aria-label="Toggle navigation menu"
+        >
+          <span class="nav__bars"></span>
+        </button>
 
-      <ul id="nav-menu" class="nav__menu">
-        {
-          nav.map((item) => (
-            <li>
-              <a
-                href={withBase(item.href)}
-                class:list={['nav__link', { 'is-active': isActive(item.href) }]}
-                aria-current={isActive(item.href) ? 'page' : undefined}
-              >
-                {item.label}
-              </a>
-            </li>
-          ))
-        }
-      </ul>
-    </nav>
+        <ul id="nav-menu" class="nav__menu">
+          {
+            nav.map((item) => (
+              <li>
+                <a
+                  href={withBase(item.href)}
+                  class:list={['nav__link', { 'is-active': isActive(item.href) }]}
+                  aria-current={isActive(item.href) ? 'page' : undefined}
+                >
+                  {item.label}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </nav>
+
+      <button class="theme-toggle" type="button" aria-label="Switch to dark theme" title="Toggle light / dark theme">
+        <Icon name="moon" size={20} class="theme-toggle__icon theme-toggle__moon" />
+        <Icon name="sun" size={20} class="theme-toggle__icon theme-toggle__sun" />
+      </button>
+    </div>
   </div>
 </header>
 
@@ -73,6 +81,29 @@ function withBase(href: string) {
       menu.classList.remove('is-open');
     })
   );
+
+  // Theme toggle. The initial theme is set by an inline script in <head>
+  // (see BaseLayout) to avoid a flash; this just flips + persists it.
+  const themeToggle = document.querySelector('.theme-toggle');
+  const syncLabel = () => {
+    const isDark = document.documentElement.dataset.theme === 'dark';
+    themeToggle?.setAttribute(
+      'aria-label',
+      isDark ? 'Switch to light theme' : 'Switch to dark theme'
+    );
+  };
+  syncLabel();
+  themeToggle?.addEventListener('click', () => {
+    const next =
+      document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
+    document.documentElement.dataset.theme = next;
+    try {
+      localStorage.setItem('theme', next);
+    } catch (e) {
+      /* storage unavailable — theme still applies for this session */
+    }
+    syncLabel();
+  });
 </script>
 
 <style>
@@ -105,6 +136,44 @@ function withBase(href: string) {
     width: 48px;
     height: 48px;
     object-fit: contain;
+  }
+
+  .header__right {
+    display: flex;
+    align-items: center;
+    gap: clamp(1rem, 2.5vw, 2rem);
+  }
+
+  /* Theme toggle button */
+  .theme-toggle {
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    border: 1px solid var(--line-strong);
+    background: var(--paper);
+    color: var(--ink);
+    border-radius: 10px;
+    flex-shrink: 0;
+    transition: background 0.2s var(--ease), color 0.2s var(--ease),
+      border-color 0.2s var(--ease);
+  }
+  .theme-toggle:hover {
+    border-color: var(--forest);
+    color: var(--forest);
+  }
+  /* The icon SVGs are rendered by the Icon component, so they carry Icon's
+     style scope — these rules must be :global to actually match them.
+     Only one icon is shown at a time (the grid centres whichever is visible):
+     light theme → moon (click to go dark); dark theme → sun. */
+  :global(.theme-toggle__sun) {
+    display: none;
+  }
+  :global(html[data-theme='dark'] .theme-toggle__moon) {
+    display: none;
+  }
+  :global(html[data-theme='dark'] .theme-toggle__sun) {
+    display: block;
   }
 
   .nav__menu {

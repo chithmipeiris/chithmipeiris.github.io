@@ -19,12 +19,16 @@
   --forest-deep: #143f2b; /* pressed / dark */
   --moss: #3e8e5e; /* hover / bright */
   --sage: #cfe0d3; /* soft green borders/fills */
+  --on-forest: #ffffff; /* text/icon colour that sits on top of --forest */
 
   /* Lines & shadows */
   --line: #e3e7e0;
   --line-strong: #cdd4c9;
   --shadow-sm: 0 1px 2px rgba(18, 20, 15, 0.04);
   --shadow-md: 0 6px 24px rgba(18, 20, 15, 0.08);
+
+  /* Tells the browser to render native UI (scrollbars, form controls) for light. */
+  color-scheme: light;
 
   /* Typography */
   --font-display: 'Space Grotesk', system-ui, -apple-system, sans-serif;
@@ -40,6 +44,35 @@
 
   /* Motion */
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* ============================================================
+   Dark theme — overrides the tokens above.
+   Applied by setting data-theme="dark" on <html> (see BaseLayout's
+   inline script + the nav toggle). Green accents brighten so they
+   stay legible on dark surfaces; button text flips to dark via
+   --on-forest.
+   ============================================================ */
+:root[data-theme='dark'] {
+  --paper: #0f1512;
+  --paper-soft: #151d18;
+  --paper-tint: #17231b;
+
+  --ink: #eaf0ea;
+  --ink-soft: #a6b2a8;
+
+  --forest: #57c98a;
+  --forest-deep: #6fd69b;
+  --moss: #8fe0b3;
+  --sage: #2c4a38;
+  --on-forest: #0f1512;
+
+  --line: #26302a;
+  --line-strong: #344038;
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 8px 28px rgba(0, 0, 0, 0.55);
+
+  color-scheme: dark;
 }
 
 /* ============================================================
@@ -70,6 +103,18 @@ body {
   font-size: clamp(1rem, 0.96rem + 0.2vw, 1.075rem);
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+  transition: background-color 0.3s var(--ease), color 0.3s var(--ease);
+}
+/* Smooth the accent/surface swap on theme toggle. */
+.header,
+.footer,
+.card,
+.timeline__card,
+.section-nav,
+.tag,
+.img-box {
+  transition: background-color 0.3s var(--ease), border-color 0.3s var(--ease),
+    color 0.3s var(--ease);
 }
 
 img,
@@ -177,11 +222,11 @@ button {
 
 .btn--primary {
   background: var(--forest);
-  color: #fff;
+  color: var(--on-forest);
 }
 .btn--primary:hover {
   background: var(--forest-deep);
-  color: #fff;
+  color: var(--on-forest);
 }
 
 .btn--outline {
@@ -277,7 +322,7 @@ button {
   left: 1rem;
   top: -3rem;
   background: var(--forest);
-  color: #fff;
+  color: var(--on-forest);
   padding: 0.6rem 1rem;
   border-radius: 8px;
   z-index: 200;
@@ -285,7 +330,7 @@ button {
 }
 .skip-link:focus {
   top: 1rem;
-  color: #fff;
+  color: var(--on-forest);
 }
 
 @media (prefers-reduced-motion: reduce) {
