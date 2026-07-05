@@ -59,6 +59,12 @@ const venueLine = [venue, year].filter(Boolean).join(' · ');
     border-radius: 0;
     border-bottom: 1px solid var(--line);
     aspect-ratio: 16 / 7;
+    /* Publication images are wide white title banners — show them in full
+       on a white tile rather than cropping. */
+    background: #fff;
+  }
+  .pub__media img {
+    object-fit: contain;
   }
   .pub__body {
     display: flex;

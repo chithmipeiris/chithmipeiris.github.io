@@ -6,7 +6,8 @@ summary: 'A book chapter exploring how marine bacterial pigments can drive novel
 venue: 'Biological Innovations for Environmental Sustainability (pp. 309–324), Institute of Biology, Sri Lanka'
 year: 2025
 order: 1
-cover: ''
+link: 'https://www.researchgate.net/publication/397651403_From_ocean_to_industry_Novel_bio-innovations_with_marine_bacterial_pigments'
+cover: '/images/publications/from-ocean-to-industry.png'
 ---
 
-Book chapter. Add a DOI or link in the `link:` field of this file's front-matter when available.
+Book chapter published in *Biological Innovations for Environmental Sustainability*.

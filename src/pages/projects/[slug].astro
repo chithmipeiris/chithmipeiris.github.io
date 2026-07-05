@@ -170,6 +170,16 @@ const sections = headings.filter((h) => h.depth === 2);
     border: 1px solid var(--line);
     margin: 1.5rem 0 0.5rem;
   }
+  /* A paragraph that only holds an image, and the caption paragraph after it. */
+  .prose :global(p:has(> img)) {
+    margin-bottom: 0;
+  }
+  .prose :global(p:has(> img) + p) {
+    text-align: center;
+    font-size: 0.88rem;
+    color: var(--ink-soft);
+    margin-top: 0.45rem;
+  }
   .prose :global(a) {
     text-decoration: underline;
     text-underline-offset: 2px;

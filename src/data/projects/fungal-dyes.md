@@ -4,7 +4,7 @@ summary: 'Extraction and characterisation of a red pigment from Talaromyces verr
 excerpt: 'My undergraduate research project: screening lichen-associated fungi for pigment producers, optimising fermentation, and identifying a natural anthraquinone pigment (austrocortirubin) as a sustainable alternative to synthetic dyes.'
 order: 2
 tags: ['Natural Pigments', 'Industrial Biotechnology', 'Sustainable Biomaterials']
-cover: ''
+cover: '/images/projects/fungal-dyes/pigment-broth.jpg'
 ---
 
 ## Overview
@@ -28,6 +28,9 @@ requires identifying suitable strains and characterising their pigments.
 - Optimised submerged liquid-state fermentation conditions.
 - Extracted pigments using ethyl acetate and purified them by Thin Layer Chromatography (TLC).
 - Characterised the compounds using UV-Vis, FTIR and NMR.
+
+![Talaromyces verruculosus culture producing the red pigment](/images/projects/fungal-dyes/culture.jpg)
+*A culture of Talaromyces verruculosus producing the characteristic red pigment.*
 
 ## Results
 

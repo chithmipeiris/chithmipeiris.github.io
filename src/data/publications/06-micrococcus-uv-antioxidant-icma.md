@@ -6,7 +6,8 @@ summary: 'Oral presentation on the antioxidant and UV-protective potential of pi
 venue: 'International Conference on Multidisciplinary Approaches (iCMA), University of Sri Jayewardenepura'
 year: 2026
 order: 6
-cover: ''
+link: 'https://www.researchgate.net/publication/408472355_Antioxidant_and_UV-Protective_Potential_of_Pigmented_Micrococcus_sp_Isolated_From_Padina_sp_Collected_in_Hikkaduwa_Sri_Lanka'
+cover: '/images/publications/micrococcus.png'
 ---
 
-Conference paper — oral presentation.
+Conference paper — oral presentation at iCMA 2026.

@@ -6,7 +6,9 @@ import { glob } from 'astro/loaders';
 // The section navigation on the detail page is generated automatically
 // from the `##` headings in the markdown body.
 const projects = defineCollection({
-  loader: glob({ pattern: '**/*.md', base: './src/content/projects' }),
+  // NOTE: kept OUTSIDE the reserved `src/content/` dir — a base inside it makes
+  // Astro load every file twice ("Duplicate id" warnings).
+  loader: glob({ pattern: '**/*.md', base: './src/data/projects' }),
   schema: z.object({
     title: z.string(),
     // Short blurb shown under the title on the card + detail header.
@@ -25,7 +27,7 @@ const projects = defineCollection({
 
 // PUBLICATIONS — each markdown file becomes a card on /publications.
 const publications = defineCollection({
-  loader: glob({ pattern: '**/*.md', base: './src/content/publications' }),
+  loader: glob({ pattern: '**/*.md', base: './src/data/publications' }),
   schema: z.object({
     title: z.string(),
     summary: z.string(),

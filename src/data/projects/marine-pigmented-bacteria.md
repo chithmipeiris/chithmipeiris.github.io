@@ -4,7 +4,7 @@ summary: 'Investigating pigmented bacteria associated with the phycoplane of bro
 excerpt: 'My ongoing MPhil research: isolating, characterising and fermenting marine pigmented bacteria from brown macroalgae to uncover natural pigments with UV-protective and antioxidant potential for biomedical and industrial use.'
 order: 1
 tags: ['Marine Microbiology', 'Natural Pigments', 'Natural Product Discovery']
-cover: ''
+cover: '/images/projects/marine-pigmented-bacteria/sampling.jpg'
 ---
 
 ## Overview
@@ -22,6 +22,9 @@ produced by seaweed-associated bacteria may offer natural, sustainable alternati
 synthetic UV filters and antioxidants — with applications in cosmetics, biomedicine and
 industry.
 
+![Rocky intertidal shore at the sampling site in Hikkaduwa, Sri Lanka](/images/projects/marine-pigmented-bacteria/shore.jpg)
+*The rocky intertidal shore in Hikkaduwa, Sri Lanka, where brown seaweed samples were collected.*
+
 ## Approach
 
 - Isolation, screening and cultivation of marine pigmented bacterial strains.
@@ -30,11 +33,17 @@ industry.
 - Antioxidant assays (DPPH, ABTS and FRAP) to determine bioactive potential.
 - Molecular characterisation of isolates via DNA extraction and 16S rRNA PCR amplification.
 
+![A brown seaweed (Padina sp.) sample collected from the intertidal zone](/images/projects/marine-pigmented-bacteria/seaweed-sample.jpg)
+*Collecting a brown seaweed (Padina sp.) sample from the intertidal zone — the source of the pigmented bacteria.*
+
 ## Highlights
 
 Pigmented isolates including *Brevibacterium* sp. and *Micrococcus* sp. — recovered from
 *Padina* sp. collected in Hikkaduwa, Sri Lanka — have shown promising antioxidant and
 UV-protective activity, and have been presented at international marine science conferences.
+
+![Fieldwork on the southern coast of Sri Lanka](/images/projects/marine-pigmented-bacteria/fieldwork.jpg)
+*Fieldwork on the southern coast of Sri Lanka.*
 
 ## What's Next
 

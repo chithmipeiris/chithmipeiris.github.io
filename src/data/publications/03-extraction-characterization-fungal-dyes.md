@@ -6,7 +6,8 @@ summary: 'A preprint exploring sustainable fungal-derived alternatives to synthe
 venue: 'SSRN Electronic Journal (Preprint), Elsevier BV'
 year: 2024
 order: 3
-cover: ''
+link: 'https://doi.org/10.2139/ssrn.5122106'
+cover: '/images/publications/extraction-characterization.png'
 ---
 
-Preprint. Add the full SSRN DOI in the `link:` field when confirmed (CV lists it as https://doi.org/10.2139/ssrn…).
+Preprint article (SSRN Electronic Journal). DOI: 10.2139/ssrn.5122106.

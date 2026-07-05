@@ -6,7 +6,8 @@ summary: 'A book chapter presenting fungal-derived pigments as sustainable, eco-
 venue: 'Achieving a Circular and Sustainable Bioeconomy (pp. 309–324), Institute of Biology, Sri Lanka'
 year: 2024
 order: 2
-cover: ''
+link: 'https://www.researchgate.net/publication/391137807_Dyes_of_fungal_origin_Reshaping_the_dye_industry_with_sustainable_alternatives_to_synthetic_dyes'
+cover: '/images/publications/dyes-fungal-origin.png'
 ---
 
-Book chapter. Add a DOI or link in the `link:` field when available.
+Book chapter published in *Achieving a Circular and Sustainable Bioeconomy*.

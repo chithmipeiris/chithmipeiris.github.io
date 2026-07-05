@@ -42,15 +42,15 @@ Everything is placeholder content right now. Here's where to change things:
 | Name, role, intro/bio, research interests, social links, résumé path, images | `src/data/site.ts` |
 | "The Journey" timeline (About page) | `src/data/journey.ts` |
 | "Certifications" carousel (About page) | `src/data/certifications.ts` |
-| Projects (list **and** detail pages) | `src/content/projects/*.md` — add/edit a file |
-| Publications | `src/content/publications/*.md` — add/edit a file |
+| Projects (list **and** detail pages) | `src/data/projects/*.md` — add/edit a file |
+| Publications | `src/data/publications/*.md` — add/edit a file |
 | Résumé PDF | replace `public/resume.pdf` |
 | Images | drop files in `public/images/` (see `public/images/README.md`) |
 | Colours / fonts | `src/styles/global.css` (the `:root` variables at the top) |
 
 ### Adding a project
 
-Create a new file, e.g. `src/content/projects/my-project.md`:
+Create a new file, e.g. `src/data/projects/my-project.md`:
 
 ```markdown
 ---
@@ -74,7 +74,7 @@ It instantly appears on `/projects` and gets its own page at `/projects/my-proje
 
 ### Adding a publication
 
-Create `src/content/publications/my-paper.md`:
+Create `src/data/publications/my-paper.md`:
 
 ```markdown
 ---
@@ -119,14 +119,19 @@ public/                 static assets served at the root
   images/               ← drop images here
 src/
   components/           Nav, Footer, cards, Timeline, CertCarousel, icons
-  content/
+  content.config.ts     content collection schemas (projects, publications)
+  data/
+    site.ts, journey.ts, certifications.ts
     projects/*.md       one file per project
     publications/*.md   one file per publication
-  data/                 site.ts, journey.ts, certifications.ts
   layouts/BaseLayout.astro
   lib/paths.ts          base-path helpers
   pages/                index, about, projects/, publications/
   styles/global.css     design tokens + base styles
 .github/workflows/deploy.yml   GitHub Pages CI
 astro.config.mjs
+
+Note: the markdown collections live in src/data/ (not src/content/) on purpose —
+a glob-loader base inside the reserved src/content/ dir makes Astro load every
+file twice ("Duplicate id" warnings).
 ```
