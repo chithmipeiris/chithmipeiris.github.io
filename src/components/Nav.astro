@@ -17,7 +17,7 @@ function withBase(href: string) {
 ---
 
 <header class="header">
-  <div class="container header__inner">
+  <div class="header__inner">
     <a href={withBase('/')} class="logo" aria-label={`${site.name} — home`}>
       <span class="logo__mark">{site.initials}</span>
     </a>
@@ -83,6 +83,10 @@ function withBase(href: string) {
     justify-content: space-between;
     min-height: 76px;
     gap: 1rem;
+    /* Full width with a small gutter so the logo hugs the left edge
+       and the nav links hug the right edge. */
+    width: 100%;
+    padding-inline: clamp(1.25rem, 2.5vw, 2.25rem);
   }
 
   .logo {

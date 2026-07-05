@@ -75,11 +75,21 @@ import { journey } from '../data/journey.ts';
     left: calc(-7px);
   }
   .timeline__card {
-    background: var(--paper);
-    border: 1px solid var(--line);
+    /* Card chrome is hidden by default and revealed on hover.
+       A transparent 1px border keeps the layout from shifting. */
+    background: transparent;
+    border: 1px solid transparent;
     border-radius: var(--radius);
     padding: 1.1rem 1.3rem;
-    box-shadow: var(--shadow-sm);
+    box-shadow: none;
+    transition: background 0.25s var(--ease), border-color 0.25s var(--ease),
+      box-shadow 0.25s var(--ease), transform 0.25s var(--ease);
+  }
+  .timeline__card:hover {
+    background: var(--paper);
+    border-color: var(--line);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
   }
   .timeline__head {
     display: flex;

@@ -13,9 +13,9 @@ const publications = (await getCollection('publications', ({ data }) => !data.dr
     <div class="container">
       <h1 class="section-kicker">Publications</h1>
       <p class="lead pubs__intro">
-        Peer-reviewed articles, reviews and conference contributions. This intro is
-        placeholder text — replace it with a short description of the publication record
-        below. Each card links out to the full paper.
+        Book chapters, articles and conference contributions spanning marine bacterial
+        pigments, sustainable fungal dyes and plant molecular biology. Where a paper is
+        available online, the card links out to it.
       </p>
 
       {
@@ -25,6 +25,8 @@ const publications = (await getCollection('publications', ({ data }) => !data.dr
               <PublicationCard
                 title={p.data.title}
                 summary={p.data.summary}
+                type={p.data.type}
+                authors={p.data.authors}
                 venue={p.data.venue}
                 year={p.data.year}
                 link={p.data.link}

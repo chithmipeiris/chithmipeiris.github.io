@@ -5,14 +5,16 @@ import { asset } from '../lib/paths.ts';
 interface Props {
   title: string;
   summary: string;
+  type?: string;
+  authors?: string;
   venue?: string;
   year?: number;
   link?: string;
   cover?: string;
 }
-const { title, summary, venue, year, link, cover } = Astro.props;
+const { title, summary, type, authors, venue, year, link, cover } = Astro.props;
 const coverSrc = asset(cover);
-const meta = [venue, year].filter(Boolean).join(' · ');
+const venueLine = [venue, year].filter(Boolean).join(' · ');
 ---
 
 <article class="card pub">
@@ -21,12 +23,14 @@ const meta = [venue, year].filter(Boolean).join(' · ');
   </div>
 
   <div class="pub__body">
-    {meta && <p class="eyebrow pub__meta">{meta}</p>}
+    {type && <p class="eyebrow pub__meta">{type}</p>}
     <h3 class="pub__title">{title}</h3>
+    {authors && <p class="pub__authors">{authors}</p>}
+    {venueLine && <p class="pub__venue">{venueLine}</p>}
     <p class="pub__summary">{summary}</p>
 
     {
-      link && (
+      link ? (
         <a
           href={link}
           class="arrow-link pub__link"
@@ -35,6 +39,10 @@ const meta = [venue, year].filter(Boolean).join(' · ');
         >
           Go to Publication <Icon name="arrow-right" size={18} />
         </a>
+      ) : (
+        <span class="arrow-link pub__link pub__link--disabled" aria-disabled="true">
+          Go to Publication <Icon name="arrow-right" size={18} />
+        </span>
       )
     }
   </div>
@@ -64,6 +72,17 @@ const meta = [venue, year].filter(Boolean).join(' · ');
   .pub__title {
     font-size: clamp(1.15rem, 1rem + 0.7vw, 1.4rem);
   }
+  .pub__authors {
+    font-size: 0.9rem;
+    color: var(--ink);
+    margin: 0;
+  }
+  .pub__venue {
+    font-size: 0.85rem;
+    color: var(--forest);
+    font-style: italic;
+    margin: 0;
+  }
   .pub__summary {
     color: var(--ink-soft);
     font-size: 0.96rem;
@@ -71,5 +90,12 @@ const meta = [venue, year].filter(Boolean).join(' · ');
   .pub__link {
     margin-top: auto;
     padding-top: 0.5rem;
+    align-self: flex-end;
+  }
+  /* Shown when a publication has no link yet — visible but inert. */
+  .pub__link--disabled {
+    color: var(--ink-soft);
+    cursor: default;
+    opacity: 0.75;
   }
 </style>

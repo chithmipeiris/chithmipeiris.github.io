@@ -16,8 +16,8 @@ const projectsHref = withBase('/projects');
     <div class="hero__bg" aria-hidden="true"></div>
     <div class="container hero__inner">
       <div class="hero__top">
-        <p class="eyebrow">{site.role}</p>
         <h1 class="hero__name">{site.name}</h1>
+        <p class="eyebrow hero__role">{site.role}</p>
       </div>
       <div class="hero__social">
         <SocialLinks showLabel />
@@ -66,12 +66,13 @@ const projectsHref = withBase('/projects');
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    /* Everything in the hero shares one edge (right on desktop). */
+    align-items: flex-end;
     padding-block: clamp(2.5rem, 8vh, 6rem);
     width: 100%;
   }
   .hero__top {
-    max-width: 20ch;
-    margin-left: auto;
+    max-width: 24ch;
     text-align: right;
   }
   .hero__name {
@@ -79,10 +80,10 @@ const projectsHref = withBase('/projects');
     text-transform: uppercase;
     line-height: 0.98;
     letter-spacing: -0.02em;
-    margin-top: 0.5rem;
   }
-  .hero__social {
-    align-self: flex-end;
+  .hero__role {
+    display: block;
+    margin-top: 1rem;
   }
 
   /* When a hero background image IS present, flip text to light for contrast. */
@@ -119,12 +120,14 @@ const projectsHref = withBase('/projects');
   }
 
   @media (max-width: 720px) {
+    .hero__inner {
+      align-items: flex-start;
+    }
     .hero__top {
       text-align: left;
-      margin-left: 0;
+      max-width: 100%;
     }
     .hero__social {
-      align-self: flex-start;
       margin-top: 2rem;
     }
   }

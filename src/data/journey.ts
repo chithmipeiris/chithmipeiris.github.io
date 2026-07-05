@@ -1,5 +1,6 @@
 // "The Journey" timeline entries on the About page.
-// Add / edit / reorder freely — the page alternates them left/right automatically.
+// Drawn from Chithmi's CV — edit / reorder freely.
+// The page alternates entries left/right automatically.
 export type JourneyEntry = {
   title: string;
   period: string;
@@ -8,38 +9,43 @@ export type JourneyEntry = {
 
 export const journey: JourneyEntry[] = [
   {
-    title: 'Placeholder — Current Research Position',
-    period: '2025 – Present',
+    title: 'MPhil in Microbiology (Research)',
+    period: '2024 – Present',
     description:
-      'Lorem ipsum placeholder. Describe the current role, lab, or research focus here — ' +
-      'what she is working on and the techniques involved.',
+      'University of Sri Jayewardenepura, Sri Lanka. Research-based MPhil focused on ' +
+      'microbial secondary metabolites, natural pigments and marine biotechnology. ' +
+      'Expected completion: December 2026.',
   },
   {
-    title: 'Placeholder — Research Assistantship',
-    period: '2024 – 2025',
+    title: 'Graduate Research Assistant',
+    period: 'Jan 2025 – Present',
     description:
-      'Lorem ipsum placeholder. A short description of a previous research role, ' +
-      'the project, and the outcomes or skills gained.',
+      'Department of Botany, University of Sri Jayewardenepura. Investigating marine ' +
+      'pigmented bacteria associated with brown seaweeds for UV-blocking and antioxidant ' +
+      'properties — isolation, fermentation optimisation, pigment analysis and 16S rRNA ' +
+      'molecular characterisation.',
   },
   {
-    title: 'Placeholder — Undergraduate Degree',
+    title: 'Graduate Teaching Assistant',
+    period: 'May 2024 – Jan 2025',
+    description:
+      'Department of Plant Sciences, University of Colombo. Conducted practical sessions ' +
+      'for undergraduate and postgraduate courses including Applied Microbiology, Plant ' +
+      'Pathology, and Experimental Design & Data Analysis.',
+  },
+  {
+    title: 'BSc (Hons) in Plant Biotechnology — First Class',
     period: '2020 – 2024',
     description:
-      'Lorem ipsum placeholder. Degree, institution, thesis topic, and any honours ' +
-      'or notable achievements during the programme.',
+      'University of Colombo, Sri Lanka. Graduated with First Class Honours ' +
+      '(GPA 3.73 / 4.00; Major GPA 4.00). Dean’s List across three consecutive academic ' +
+      'years. Undergraduate research on pigments of fungal origin.',
   },
   {
-    title: 'Placeholder — Internship / Fieldwork',
-    period: '2022',
+    title: 'G.C.E. Advanced Level — Biological Science',
+    period: '2018',
     description:
-      'Lorem ipsum placeholder. A formative internship, field expedition, or lab ' +
-      'placement worth highlighting on the timeline.',
-  },
-  {
-    title: 'Placeholder — Early Milestone',
-    period: '2020',
-    description:
-      'Lorem ipsum placeholder. The starting point of the academic journey — ' +
-      'an award, a first publication, or the spark that started it all.',
+      'Taxila Central College, Horana, Sri Lanka. Biological Science stream ' +
+      '(Chemistry, Biology, Physics), setting the foundation for a career in the life sciences.',
   },
 ];

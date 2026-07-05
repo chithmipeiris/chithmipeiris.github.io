@@ -29,6 +29,10 @@ const publications = defineCollection({
   schema: z.object({
     title: z.string(),
     summary: z.string(),
+    // Category, e.g. "Book Chapter", "Journal Article", "Conference Paper".
+    type: z.string().optional(),
+    // Author list as it should be displayed.
+    authors: z.string().optional(),
     // Where "Go to Publication" points (DOI, journal, PDF, etc.).
     link: z.string().optional(),
     cover: z.string().optional(),

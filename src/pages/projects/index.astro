@@ -13,9 +13,9 @@ const projects = (await getCollection('projects', ({ data }) => !data.draft)).so
     <div class="container">
       <h1 class="section-kicker">Projects</h1>
       <p class="lead projects__intro">
-        A selection of research projects spanning marine microbiology, natural product
-        discovery and biotechnology. This intro is placeholder text — replace it with a
-        short framing of the work shown below.
+        Research projects spanning marine microbiology, natural pigment discovery and
+        plant biotechnology — from pigment-producing marine bacteria and sustainable
+        fungal dyes to plant molecular methods.
       </p>
 
       <div class="projects__timeline">
@@ -49,13 +49,13 @@ const projects = (await getCollection('projects', ({ data }) => !data.draft)).so
   }
   .projects__timeline {
     position: relative;
-    padding-left: clamp(0px, 3vw, 2.5rem);
+    padding-left: clamp(2rem, 5vw, 3.5rem);
   }
   .projects__rail {
     position: absolute;
     top: 0.5rem;
     bottom: 0.5rem;
-    left: 4px;
+    left: 5px;
     width: 2px;
     background: var(--line-strong);
   }
@@ -70,16 +70,14 @@ const projects = (await getCollection('projects', ({ data }) => !data.draft)).so
   .projects__item {
     position: relative;
   }
+  /* Horizontal dash connecting the rail to each card. */
   .projects__node {
     position: absolute;
-    top: 2.25rem;
-    left: calc(-1 * clamp(0px, 3vw, 2.5rem) + -4px);
-    width: 14px;
-    height: 14px;
-    border-radius: 50%;
+    top: 2.75rem;
+    left: calc(-1 * clamp(2rem, 5vw, 3.5rem) + 6px);
+    width: calc(clamp(2rem, 5vw, 3.5rem) - 12px);
+    height: 2px;
     background: var(--forest);
-    border: 3px solid var(--paper);
-    box-shadow: 0 0 0 1px var(--line-strong);
   }
 
   @media (max-width: 620px) {
