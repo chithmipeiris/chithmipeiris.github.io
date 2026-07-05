@@ -1,0 +1,131 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SocialLinks from '../components/SocialLinks.astro';
+import Icon from '../components/Icon.astro';
+import { site } from '../data/site.ts';
+import { withBase, asset } from '../lib/paths.ts';
+
+// Optional hero background image (configured in site.ts). Falls back to a green tint.
+const heroBg = site.images.hero ? asset(site.images.hero) : undefined;
+const projectsHref = withBase('/projects');
+---
+
+<BaseLayout>
+  <!-- HERO -->
+  <section class:list={['hero', { 'has-bg': heroBg }]}>
+    <div class="hero__bg" aria-hidden="true"></div>
+    <div class="container hero__inner">
+      <div class="hero__top">
+        <p class="eyebrow">{site.role}</p>
+        <h1 class="hero__name">{site.name}</h1>
+      </div>
+      <div class="hero__social">
+        <SocialLinks showLabel />
+      </div>
+    </div>
+  </section>
+
+  <!-- INTRO -->
+  <section class="section intro">
+    <div class="container">
+      <p class="intro__text lead">{site.intro}</p>
+
+      <ul class="intro__tags" aria-label="Research interests">
+        {site.researchInterests.map((r) => <li class="tag">{r}</li>)}
+      </ul>
+
+      <div class="intro__cta">
+        <a href={projectsHref} class="btn btn--primary">
+          <Icon name="arrow-right" size={18} /> View Projects
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style define:vars={{ heroBg: heroBg ? `url(${heroBg})` : 'none' }}>
+  .hero {
+    position: relative;
+    min-height: min(78vh, 720px);
+    display: flex;
+    align-items: stretch;
+    overflow: hidden;
+    background: var(--paper-tint);
+  }
+  .hero__bg {
+    position: absolute;
+    inset: 0;
+    background-image: var(--heroBg);
+    background-size: cover;
+    background-position: center;
+    /* Subtle green wash so text stays legible over any photo */
+    box-shadow: inset 0 0 0 100vmax rgba(20, 63, 43, 0.28);
+  }
+  .hero__inner {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-block: clamp(2.5rem, 8vh, 6rem);
+    width: 100%;
+  }
+  .hero__top {
+    max-width: 20ch;
+    margin-left: auto;
+    text-align: right;
+  }
+  .hero__name {
+    font-size: clamp(2.75rem, 5vw + 1.5rem, 6rem);
+    text-transform: uppercase;
+    line-height: 0.98;
+    letter-spacing: -0.02em;
+    margin-top: 0.5rem;
+  }
+  .hero__social {
+    align-self: flex-end;
+  }
+
+  /* When a hero background image IS present, flip text to light for contrast. */
+  .hero.has-bg .hero__name,
+  .hero.has-bg .eyebrow {
+    color: #fff;
+  }
+  .hero:not(.has-bg) .hero__bg {
+    box-shadow: none;
+  }
+
+  .intro__text {
+    max-width: 62ch;
+    margin-inline: auto;
+    text-align: center;
+    color: var(--ink);
+    font-size: clamp(1.1rem, 1rem + 0.6vw, 1.35rem);
+    line-height: 1.7;
+  }
+  .intro__tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.6rem;
+    list-style: none;
+    padding: 0;
+    margin: 2rem auto 0;
+    max-width: 60rem;
+  }
+  .intro__cta {
+    display: flex;
+    justify-content: center;
+    margin-top: 2.5rem;
+  }
+
+  @media (max-width: 720px) {
+    .hero__top {
+      text-align: left;
+      margin-left: 0;
+    }
+    .hero__social {
+      align-self: flex-start;
+      margin-top: 2rem;
+    }
+  }
+</style>

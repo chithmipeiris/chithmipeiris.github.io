@@ -1,0 +1,56 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PublicationCard from '../../components/PublicationCard.astro';
+
+const publications = (await getCollection('publications', ({ data }) => !data.draft)).sort(
+  (a, b) => a.data.order - b.data.order
+);
+---
+
+<BaseLayout title="Publications">
+  <section class="section">
+    <div class="container">
+      <h1 class="section-kicker">Publications</h1>
+      <p class="lead pubs__intro">
+        Peer-reviewed articles, reviews and conference contributions. This intro is
+        placeholder text — replace it with a short description of the publication record
+        below. Each card links out to the full paper.
+      </p>
+
+      {
+        publications.length > 0 ? (
+          <div class="pubs__grid">
+            {publications.map((p) => (
+              <PublicationCard
+                title={p.data.title}
+                summary={p.data.summary}
+                venue={p.data.venue}
+                year={p.data.year}
+                link={p.data.link}
+                cover={p.data.cover}
+              />
+            ))}
+          </div>
+        ) : (
+          <p class="pubs__empty">No publications listed yet — check back soon.</p>
+        )
+      }
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .pubs__intro {
+    margin: 1rem 0 3rem;
+    max-width: 72ch;
+  }
+  .pubs__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr));
+    gap: clamp(1.25rem, 3vw, 2rem);
+  }
+  .pubs__empty {
+    color: var(--ink-soft);
+  }
+</style>

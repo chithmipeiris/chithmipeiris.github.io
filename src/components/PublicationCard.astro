@@ -1,0 +1,75 @@
+---
+import Icon from './Icon.astro';
+import { asset } from '../lib/paths.ts';
+
+interface Props {
+  title: string;
+  summary: string;
+  venue?: string;
+  year?: number;
+  link?: string;
+  cover?: string;
+}
+const { title, summary, venue, year, link, cover } = Astro.props;
+const coverSrc = asset(cover);
+const meta = [venue, year].filter(Boolean).join(' · ');
+---
+
+<article class="card pub">
+  <div class="img-box pub__media">
+    {coverSrc ? <img src={coverSrc} alt={`${title} figure`} /> : <span>&lt;IMAGE&gt;</span>}
+  </div>
+
+  <div class="pub__body">
+    {meta && <p class="eyebrow pub__meta">{meta}</p>}
+    <h3 class="pub__title">{title}</h3>
+    <p class="pub__summary">{summary}</p>
+
+    {
+      link && (
+        <a
+          href={link}
+          class="arrow-link pub__link"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Go to Publication <Icon name="arrow-right" size={18} />
+        </a>
+      )
+    }
+  </div>
+</article>
+
+<style>
+  .pub {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+  .pub__media {
+    border: none;
+    border-radius: 0;
+    border-bottom: 1px solid var(--line);
+    aspect-ratio: 16 / 7;
+  }
+  .pub__body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    padding: clamp(1.25rem, 3vw, 1.75rem);
+  }
+  .pub__meta {
+    margin-bottom: 0.1rem;
+  }
+  .pub__title {
+    font-size: clamp(1.15rem, 1rem + 0.7vw, 1.4rem);
+  }
+  .pub__summary {
+    color: var(--ink-soft);
+    font-size: 0.96rem;
+  }
+  .pub__link {
+    margin-top: auto;
+    padding-top: 0.5rem;
+  }
+</style>

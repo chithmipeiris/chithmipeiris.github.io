@@ -1,0 +1,70 @@
+---
+import Icon from './Icon.astro';
+import { site } from '../data/site.ts';
+
+interface Props {
+  showLabel?: boolean; // show the "Find me on:" prefix
+  class?: string;
+}
+const { showLabel = false, class: className } = Astro.props;
+---
+
+<div class:list={['socials', className]}>
+  {showLabel && <span class="socials__label">Find me on:</span>}
+  <ul class="socials__list">
+    {
+      site.socials.map((s) => (
+        <li>
+          <a
+            href={s.href}
+            class="socials__link"
+            aria-label={s.label}
+            title={s.label}
+            target={s.icon === 'email' ? undefined : '_blank'}
+            rel={s.icon === 'email' ? undefined : 'noopener noreferrer'}
+          >
+            <Icon name={s.icon} size={20} />
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</div>
+
+<style>
+  .socials {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  .socials__label {
+    font-family: var(--font-body);
+    color: var(--ink-soft);
+    font-weight: 500;
+  }
+  .socials__list {
+    display: flex;
+    gap: 0.6rem;
+    list-style: none;
+    padding: 0;
+  }
+  .socials__link {
+    display: grid;
+    place-items: center;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: var(--paper);
+    border: 1px solid var(--line-strong);
+    color: var(--ink);
+    transition: background 0.2s var(--ease), color 0.2s var(--ease),
+      border-color 0.2s var(--ease), transform 0.2s var(--ease);
+  }
+  .socials__link:hover {
+    background: var(--forest);
+    border-color: var(--forest);
+    color: #fff;
+    transform: translateY(-2px);
+  }
+</style>

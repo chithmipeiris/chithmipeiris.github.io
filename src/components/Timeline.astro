@@ -1,0 +1,127 @@
+---
+import { journey } from '../data/journey.ts';
+---
+
+<div class="timeline">
+  <div class="timeline__rail" aria-hidden="true"></div>
+  <ol class="timeline__list">
+    {
+      journey.map((entry, i) => (
+        <li class:list={['timeline__item', i % 2 === 0 ? 'is-left' : 'is-right']}>
+          <span class="timeline__node" aria-hidden="true" />
+          <div class="timeline__card">
+            <div class="timeline__head">
+              <h3 class="timeline__title">{entry.title}</h3>
+              <span class="timeline__period">{entry.period}</span>
+            </div>
+            <p class="timeline__desc">{entry.description}</p>
+          </div>
+        </li>
+      ))
+    }
+  </ol>
+</div>
+
+<style>
+  .timeline {
+    position: relative;
+    padding-block: 1rem;
+  }
+  /* Center rail (desktop) */
+  .timeline__rail {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 2px;
+    transform: translateX(-50%);
+    background: var(--line-strong);
+  }
+  .timeline__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: clamp(1.5rem, 4vw, 2.75rem);
+  }
+  .timeline__item {
+    position: relative;
+    width: 50%;
+    box-sizing: border-box;
+  }
+  .timeline__item.is-left {
+    padding-right: clamp(1.5rem, 4vw, 3rem);
+  }
+  .timeline__item.is-right {
+    margin-left: 50%;
+    padding-left: clamp(1.5rem, 4vw, 3rem);
+  }
+  .timeline__node {
+    position: absolute;
+    top: 0.4rem;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--forest);
+    border: 3px solid var(--paper);
+    box-shadow: 0 0 0 1px var(--line-strong);
+    z-index: 1;
+  }
+  .timeline__item.is-left .timeline__node {
+    right: calc(-7px);
+  }
+  .timeline__item.is-right .timeline__node {
+    left: calc(-7px);
+  }
+  .timeline__card {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 1.1rem 1.3rem;
+    box-shadow: var(--shadow-sm);
+  }
+  .timeline__head {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 0.25rem 1rem;
+    margin-bottom: 0.4rem;
+  }
+  .timeline__title {
+    font-size: 1.1rem;
+  }
+  .timeline__period {
+    font-family: var(--font-display);
+    font-size: 0.8rem;
+    color: var(--forest);
+    white-space: nowrap;
+  }
+  .timeline__desc {
+    color: var(--ink-soft);
+    font-size: 0.95rem;
+    margin: 0;
+  }
+
+  /* Mobile: single left rail, all cards on the right */
+  @media (max-width: 720px) {
+    .timeline__rail {
+      left: 7px;
+      transform: none;
+    }
+    .timeline__item,
+    .timeline__item.is-left,
+    .timeline__item.is-right {
+      width: 100%;
+      margin-left: 0;
+      padding-left: 2rem;
+      padding-right: 0;
+    }
+    .timeline__item.is-left .timeline__node,
+    .timeline__item.is-right .timeline__node {
+      left: 0;
+      right: auto;
+    }
+  }
+</style>

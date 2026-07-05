@@ -1,0 +1,164 @@
+---
+import Icon from './Icon.astro';
+import { certifications } from '../data/certifications.ts';
+import { asset } from '../lib/paths.ts';
+---
+
+<div class="carousel">
+  <button class="carousel__arrow carousel__arrow--prev" aria-label="Previous certifications">
+    <Icon name="chevron-left" size={22} />
+  </button>
+
+  <ul class="carousel__track">
+    {
+      certifications.map((c) => {
+        const img = asset(c.image);
+        const inner = (
+          <>
+            <div class="img-box cert__media">
+              {img ? <img src={img} alt={`${c.title} badge`} /> : <span>&lt;IMAGE&gt;</span>}
+            </div>
+            <div class="cert__body">
+              <h3 class="cert__title">{c.title}</h3>
+              <p class="cert__issuer">{c.issuer}</p>
+              <p class="cert__desc">{c.description}</p>
+            </div>
+          </>
+        );
+        return (
+          <li class="card cert">
+            {c.link ? (
+              <a href={c.link} target="_blank" rel="noopener noreferrer" class="cert__link">
+                {inner}
+              </a>
+            ) : (
+              inner
+            )}
+          </li>
+        );
+      })
+    }
+  </ul>
+
+  <button class="carousel__arrow carousel__arrow--next" aria-label="Next certifications">
+    <Icon name="chevron-right" size={22} />
+  </button>
+</div>
+
+<script>
+  document.querySelectorAll('.carousel').forEach((carousel) => {
+    const track = carousel.querySelector('.carousel__track') as HTMLElement | null;
+    const prev = carousel.querySelector('.carousel__arrow--prev');
+    const next = carousel.querySelector('.carousel__arrow--next');
+    if (!track) return;
+
+    const step = () => Math.max(track.clientWidth * 0.8, 260);
+    prev?.addEventListener('click', () =>
+      track.scrollBy({ left: -step(), behavior: 'smooth' })
+    );
+    next?.addEventListener('click', () =>
+      track.scrollBy({ left: step(), behavior: 'smooth' })
+    );
+
+    const update = () => {
+      const atStart = track.scrollLeft <= 4;
+      const atEnd = track.scrollLeft + track.clientWidth >= track.scrollWidth - 4;
+      prev?.toggleAttribute('disabled', atStart);
+      next?.toggleAttribute('disabled', atEnd);
+    };
+    track.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('resize', update);
+    update();
+  });
+</script>
+
+<style>
+  .carousel {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  .carousel__track {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: clamp(220px, 24vw, 280px);
+    gap: 1.25rem;
+    list-style: none;
+    padding: 0.5rem 0.25rem 1rem;
+    margin: 0;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: thin;
+  }
+  .carousel__track > .cert {
+    scroll-snap-align: start;
+  }
+  .cert {
+    overflow: hidden;
+  }
+  .cert__link {
+    color: inherit;
+    display: block;
+  }
+  .cert__media {
+    border: none;
+    border-radius: 0;
+    border-bottom: 1px solid var(--line);
+    aspect-ratio: 4 / 3;
+  }
+  .cert__body {
+    padding: 1rem 1.1rem 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+  .cert__title {
+    font-size: 1.02rem;
+  }
+  .cert__issuer {
+    font-family: var(--font-display);
+    font-size: 0.8rem;
+    color: var(--forest);
+    margin: 0;
+  }
+  .cert__desc {
+    color: var(--ink-soft);
+    font-size: 0.9rem;
+    margin: 0.2rem 0 0;
+  }
+
+  .carousel__arrow {
+    display: grid;
+    place-items: center;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background: var(--paper);
+    border: 1px solid var(--line-strong);
+    color: var(--ink);
+    transition: background 0.2s var(--ease), color 0.2s var(--ease),
+      border-color 0.2s var(--ease), opacity 0.2s var(--ease);
+  }
+  .carousel__arrow:hover:not([disabled]) {
+    background: var(--forest);
+    color: #fff;
+    border-color: var(--forest);
+  }
+  .carousel__arrow[disabled] {
+    opacity: 0.35;
+    cursor: not-allowed;
+  }
+
+  @media (max-width: 720px) {
+    .carousel {
+      grid-template-columns: 1fr;
+    }
+    .carousel__arrow {
+      display: none;
+    }
+    .carousel__track {
+      grid-auto-columns: 78vw;
+    }
+  }
+</style>

@@ -1,0 +1,18 @@
+{
+  "name": "chithmi-portfolio",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "Portfolio website for Chithmi Tharika Peiris — research in plant science, marine biology & biotechnology.",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@fontsource/inter": "^5.1.1",
+    "@fontsource/space-grotesk": "^5.1.1",
+    "astro": "^5.6.1"
+  }
+}
