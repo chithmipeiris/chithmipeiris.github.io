@@ -106,6 +106,13 @@ import { asset } from '../lib/paths.ts';
     border-radius: 0;
     border-bottom: 1px solid var(--line);
     aspect-ratio: 4 / 3;
+    /* White tile so logos on white/transparent backgrounds blend cleanly. */
+    background: #fff;
+  }
+  /* Logos are shown in full (not cropped) and given breathing room. */
+  .cert__media img {
+    object-fit: contain;
+    padding: 1.25rem;
   }
   .cert__body {
     padding: 1rem 1.1rem 1.25rem;

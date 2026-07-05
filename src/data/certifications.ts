@@ -21,6 +21,7 @@ export const certifications: Certification[] = [
   {
     title: 'Genomics',
     issuer: 'Wellcome Connecting Science',
+    image: '/images/wellcome-connecting-science.jpg',
     description:
       'Professional development in genomics and genomic technologies through a globally ' +
       'recognised training programme.',
@@ -28,6 +29,7 @@ export const certifications: Certification[] = [
   {
     title: 'Bioinformatics',
     issuer: 'Wellcome Connecting Science',
+    image: '/images/wellcome-connecting-science.jpg',
     description:
       'Applied bioinformatics — sequence analysis and computational approaches for ' +
       'biological data.',
@@ -35,6 +37,7 @@ export const certifications: Certification[] = [
   {
     title: 'Scientific Computing',
     issuer: 'RMIT University',
+    image: '/images/rmit-university.jpg',
     description:
       'Computational skills and scientific computing methods for research in the life ' +
       'sciences.',
@@ -42,6 +45,7 @@ export const certifications: Certification[] = [
   {
     title: 'Sustainability',
     issuer: 'Deakin University',
+    image: '/images/deakin-university.jpg',
     description:
       'Foundations of sustainability and its role in science, industry and the ' +
       'bioeconomy.',
@@ -49,6 +53,7 @@ export const certifications: Certification[] = [
   {
     title: 'Leadership & Professional Skills',
     issuer: 'Deakin University',
+    image: '/images/deakin-university.jpg',
     description:
       'Leadership, communication and professional development for early-career researchers.',
   },

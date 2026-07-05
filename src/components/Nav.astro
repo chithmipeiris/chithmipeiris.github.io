@@ -19,7 +19,14 @@ function withBase(href: string) {
 <header class="header">
   <div class="header__inner">
     <a href={withBase('/')} class="logo" aria-label={`${site.name} — home`}>
-      <span class="logo__mark">{site.initials}</span>
+      <img
+        src={withBase('/scientist.png')}
+        alt=""
+        class="logo__img"
+        width="48"
+        height="48"
+        decoding="async"
+      />
     </a>
 
     <nav class="nav" aria-label="Primary">
@@ -93,18 +100,11 @@ function withBase(href: string) {
     display: inline-flex;
     align-items: center;
   }
-  .logo__mark {
-    display: grid;
-    place-items: center;
-    width: 46px;
-    height: 46px;
-    border-radius: 12px;
-    background: var(--forest);
-    color: #fff;
-    font-family: var(--font-display);
-    font-weight: 700;
-    font-size: 1.15rem;
-    letter-spacing: 0.02em;
+  .logo__img {
+    display: block;
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
   }
 
   .nav__menu {

@@ -24,6 +24,13 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      - name: Setup Pages
+        # Ensures GitHub Pages is enabled/initialised for this repo before
+        # deploying, and exposes the resolved base_path to the build.
+        id: pages
+        uses: actions/configure-pages@v5
+        with:
+          enablement: true
       - name: Build Astro site
         uses: withastro/action@v3
         # Reads package.json, installs deps, runs `astro build`,
