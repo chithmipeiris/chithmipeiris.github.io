@@ -59,7 +59,7 @@ export const site = {
   // To use a real image, drop the file in public/images/ and set the path here,
   // e.g. hero: '/images/hero.jpg'
   images: {
-    hero: '', // full-bleed background behind the name on the homepage
+    hero: '/images/hero.png', // blended banner image shown beside the name on the homepage
     portrait: '/images/aboutme-image.png', // portrait shown in the "About Me" section
   },
 

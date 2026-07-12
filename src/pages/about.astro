@@ -28,13 +28,15 @@ const resumeHref = asset(site.resume);
       </div>
 
       <div class="about__portrait">
-        {/* Portrait image hidden for now — uncomment to show the blended photo
-            (the image path is still configured in site.ts → images.portrait):
-        {portrait && <img src={portrait} alt={site.name} class="about__portrait-img" />}
-        */}
-        <div class="img-box">
-          <span>&lt;IMAGE&gt;</span>
-        </div>
+        {
+          portrait ? (
+            <img src={portrait} alt={site.name} class="about__portrait-img" />
+          ) : (
+            <div class="img-box">
+              <span>&lt;IMAGE&gt;</span>
+            </div>
+          )
+        }
       </div>
     </div>
   </section>
