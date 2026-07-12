@@ -28,8 +28,12 @@ const resumeHref = asset(site.resume);
       </div>
 
       <div class="about__portrait">
+        {/* Portrait image hidden for now — uncomment to show the blended photo
+            (the image path is still configured in site.ts → images.portrait):
+        {portrait && <img src={portrait} alt={site.name} class="about__portrait-img" />}
+        */}
         <div class="img-box">
-          {portrait ? <img src={portrait} alt={site.name} /> : <span>&lt;IMAGE&gt;</span>}
+          <span>&lt;IMAGE&gt;</span>
         </div>
       </div>
     </div>
@@ -90,6 +94,13 @@ const resumeHref = asset(site.resume);
   }
   .about__portrait .img-box {
     aspect-ratio: 4 / 5;
+  }
+  /* Transparent-background portrait: sits directly on the page, no frame/box. */
+  .about__portrait-img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
   }
 
   .journey {

@@ -20,12 +20,14 @@ export const site = {
 
   // Homepage hero intro paragraph.
   intro:
-    'I am a First Class Honours graduate in Plant Biotechnology from the University of ' +
-    'Colombo, now pursuing an MPhil in Microbiology at the University of Sri Jayewardenepura. ' +
-    'My research explores microbial secondary metabolites, natural pigments and marine ' +
-    'biotechnology — from pigment-producing marine bacteria to sustainable alternatives for ' +
-    'synthetic dyes. I am preparing to pursue a PhD, driven by a passion for turning microbial ' +
-    'discoveries into sustainable products for industry and biomedicine.',
+    'I chase colour where you would least expect it — in bacteria clinging to seaweed and ' +
+    'fungi that could one day retire synthetic dyes. A First Class Honours graduate in Plant ' +
+    'Biotechnology from the University of Colombo, I am now an MPhil researcher in Microbiology ' +
+    'at the University of Sri Jayewardenepura, working where microbial secondary metabolites, ' +
+    'natural pigments and marine biotechnology meet. I particularly focus on microbial ' +
+    'biotechnology, natural product discovery and bioprocess development, with a passion for ' +
+    'translating bioactive compounds from microorganisms into sustainable solutions for ' +
+    'biotechnology and industrial applications.',
 
   // Longer "About Me" paragraph on the About page.
   about:
@@ -58,7 +60,7 @@ export const site = {
   // e.g. hero: '/images/hero.jpg'
   images: {
     hero: '', // full-bleed background behind the name on the homepage
-    portrait: '', // portrait shown in the "About Me" section
+    portrait: '/images/aboutme-image.png', // portrait shown in the "About Me" section
   },
 
   // "Find me on:" links.

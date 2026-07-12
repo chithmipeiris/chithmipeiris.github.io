@@ -13,9 +13,10 @@ const publications = (await getCollection('publications', ({ data }) => !data.dr
     <div class="container">
       <h1 class="section-kicker">Publications</h1>
       <p class="lead pubs__intro">
-        Book chapters, articles and conference contributions spanning marine bacterial
-        pigments, sustainable fungal dyes and plant molecular biology. Where a paper is
-        available online, the card links out to it.
+        Good science refuses to stay in the lab. These book chapters, journal articles and
+        conference papers carry the work out into the world — turning pigmented marine
+        bacteria, sustainable fungal dyes and plant molecular biology into findings the
+        wider scientific community can build on. Pick a card and dive into the full paper.
       </p>
 
       {
@@ -46,6 +47,7 @@ const publications = (await getCollection('publications', ({ data }) => !data.dr
   .pubs__intro {
     margin: 1rem 0 3rem;
     max-width: 72ch;
+    font-style: italic;
   }
   .pubs__grid {
     display: grid;

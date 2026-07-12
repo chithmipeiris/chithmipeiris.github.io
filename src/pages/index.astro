@@ -14,10 +14,18 @@ const projectsHref = withBase('/projects');
   <!-- HERO -->
   <section class:list={['hero', { 'has-bg': heroBg }]}>
     <div class="hero__bg" aria-hidden="true"></div>
-    <div class="container hero__inner">
+    <div class="hero__inner">
       <div class="hero__top">
-        <h1 class="hero__name">{site.name}</h1>
-        <p class="eyebrow hero__role">{site.role}</p>
+        <h1 class="hero__name">
+          {site.name.split(' ').map((word) => <span class="hero__name-word">{word}</span>)}
+        </h1>
+        <p class="hero__role" aria-label={site.role}>
+          {
+            site.role.split(' · ').map((line) => (
+              <span class="hero__role-line">{line}</span>
+            ))
+          }
+        </p>
       </div>
       <div class="hero__social">
         <SocialLinks showLabel />
@@ -43,6 +51,38 @@ const projectsHref = withBase('/projects');
   </section>
 </BaseLayout>
 
+<script>
+  // Typewriter effect for the hero role (two lines). Progressive enhancement:
+  // the full text is already in the DOM, so it works fine without JS / with
+  // reduced motion; this just re-types it for effect.
+  const role = document.querySelector('.hero__role');
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (role && !reduce) {
+    const lines = Array.from(role.querySelectorAll('.hero__role-line'));
+    const texts = lines.map((l) => l.textContent || '');
+    lines.forEach((l) => (l.textContent = ''));
+    let li = 0;
+    let ci = 0;
+    const step = () => {
+      if (li >= lines.length) return; // finished — caret stays on the last line
+      const line = lines[li];
+      const full = texts[li];
+      lines.forEach((l) => l.classList.remove('has-cursor'));
+      line.classList.add('has-cursor');
+      if (ci <= full.length) {
+        line.textContent = full.slice(0, ci);
+        ci += 1;
+        setTimeout(step, 55);
+      } else {
+        li += 1;
+        ci = 0;
+        setTimeout(step, 260);
+      }
+    };
+    setTimeout(step, 400); // let the name land first
+  }
+</script>
+
 <style define:vars={{ heroBg: heroBg ? `url(${heroBg})` : 'none' }}>
   .hero {
     position: relative;
@@ -66,29 +106,61 @@ const projectsHref = withBase('/projects');
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    /* Everything in the hero shares one edge (right on desktop). */
+    /* Hero content shares the right edge (as before). Full-width with a small
+       gutter — matching the nav — so it hugs the right edge instead of being
+       capped by the centred container. */
     align-items: flex-end;
     padding-block: clamp(2.5rem, 8vh, 6rem);
+    padding-inline: clamp(1.25rem, 5vw, 3.5rem);
     width: 100%;
   }
   .hero__top {
-    max-width: 24ch;
     text-align: right;
   }
   .hero__name {
+    font-family: var(--font-display);
+    font-weight: 700;
     font-size: clamp(2.75rem, 5vw + 1.5rem, 6rem);
-    text-transform: uppercase;
-    line-height: 0.98;
+    line-height: 1;
     letter-spacing: -0.02em;
   }
-  .hero__role {
+  /* Each name word on its own line. */
+  .hero__name-word {
     display: block;
-    margin-top: 1rem;
+  }
+  .hero__role {
+    margin-top: 1.25rem;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: clamp(0.9rem, 0.8rem + 0.4vw, 1.1rem);
+    letter-spacing: 0;
+    text-transform: none;
+    color: var(--forest);
+  }
+  /* Two lines of the role, revealed with a typewriter effect. */
+  .hero__role-line {
+    display: block;
+    min-height: 1.35em;
+  }
+  .hero__role-line.has-cursor::after {
+    content: '';
+    display: inline-block;
+    width: 0.55ch;
+    height: 1.02em;
+    margin-left: 3px;
+    background: currentColor;
+    vertical-align: text-bottom;
+    animation: hero-caret 1s steps(1) infinite;
+  }
+  @keyframes hero-caret {
+    50% {
+      opacity: 0;
+    }
   }
 
   /* When a hero background image IS present, flip text to light for contrast. */
   .hero.has-bg .hero__name,
-  .hero.has-bg .eyebrow {
+  .hero.has-bg .hero__role {
     color: #fff;
   }
   .hero:not(.has-bg) .hero__bg {
@@ -125,7 +197,6 @@ const projectsHref = withBase('/projects');
     }
     .hero__top {
       text-align: left;
-      max-width: 100%;
     }
     .hero__social {
       margin-top: 2rem;

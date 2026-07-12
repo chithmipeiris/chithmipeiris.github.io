@@ -164,21 +164,30 @@ const sections = headings.filter((h) => h.depth === 2);
     margin: 0 0 1.1rem;
     color: var(--ink-soft);
   }
+  /* Consistent image sizing regardless of aspect ratio:
+     landscape images fill the column width; portrait/square images are
+     capped by height so they never tower over the text. Both centred. */
   .prose :global(img) {
-    width: 100%;
+    display: block;
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    max-height: 30rem;
+    /* Spacing above comes from the wrapping <p>; this leaves a small gap
+       between the image and its caption below. */
+    margin: 0 auto 0.6rem;
     border-radius: var(--radius);
     border: 1px solid var(--line);
-    margin: 1.5rem 0 0.5rem;
   }
-  /* A paragraph that only holds an image, and the caption paragraph after it. */
+  /* In Markdown the image and its caption land in the SAME paragraph, so style
+     that paragraph: centre it and shrink the text to caption size. */
   .prose :global(p:has(> img)) {
-    margin-bottom: 0;
-  }
-  .prose :global(p:has(> img) + p) {
     text-align: center;
-    font-size: 0.88rem;
+    font-size: 0.85rem;
+    line-height: 1.55;
     color: var(--ink-soft);
-    margin-top: 0.45rem;
+    margin: 1.75rem auto 1.5rem;
+    max-width: 90%;
   }
   .prose :global(a) {
     text-decoration: underline;

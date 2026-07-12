@@ -12,10 +12,16 @@ const projects = (await getCollection('projects', ({ data }) => !data.draft)).so
   <section class="section">
     <div class="container">
       <h1 class="section-kicker">Projects</h1>
+      <figure class="intro-quote">
+        <blockquote>“The role of the infinitely small in nature is infinitely large.”</blockquote>
+        <figcaption>— Louis Pasteur</figcaption>
+      </figure>
       <p class="lead projects__intro">
-        Research projects spanning marine microbiology, natural pigment discovery and
-        plant biotechnology — from pigment-producing marine bacteria and sustainable
-        fungal dyes to plant molecular methods.
+        This is where curiosity gets its hands dirty. Every project starts with a hunch —
+        a pigment glowing in a flask, a microbe clinging to seaweed, DNA locked inside a
+        stubborn leaf — and chases it through screening, fermentation and analysis all the
+        way to a real result. Poke around: from marine bacterial pigments and sustainable
+        fungal dyes to the molecular methods that make the rest possible.
       </p>
 
       <div class="projects__timeline">
@@ -43,9 +49,31 @@ const projects = (await getCollection('projects', ({ data }) => !data.draft)).so
 </BaseLayout>
 
 <style>
+  .intro-quote {
+    display: table; /* shrink-wrap to the quote's width so the caption can sit at its end */
+    margin: 1.5rem 0 1.25rem;
+    padding-left: 1.1rem;
+    border-left: 3px solid var(--forest);
+  }
+  .intro-quote blockquote {
+    font-family: var(--font-display);
+    font-size: clamp(1.05rem, 0.9rem + 0.8vw, 1.5rem);
+    font-style: italic;
+    line-height: 1.3;
+    margin: 0;
+  }
+  .intro-quote figcaption {
+    margin-top: 0.45rem;
+    text-align: right;
+    color: var(--forest);
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 0.9rem;
+  }
   .projects__intro {
-    margin: 1rem 0 3rem;
+    margin: 0 0 3rem;
     max-width: 72ch;
+    font-style: italic;
   }
   .projects__timeline {
     position: relative;
