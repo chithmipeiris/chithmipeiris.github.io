@@ -1,0 +1,29 @@
+version: 2
+updates:
+  # JavaScript / build dependencies (Astro, fontsource, etc.)
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    # Bundle all npm updates into a single PR to cut review noise.
+    groups:
+      npm-dependencies:
+        patterns:
+          - "*"
+    open-pull-requests-limit: 5
+    labels:
+      - "dependencies"
+
+  # GitHub Actions used in the deploy workflow — a real supply-chain surface,
+  # so keep them patched (and ideally pinned) too.
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    groups:
+      github-actions:
+        patterns:
+          - "*"
+    labels:
+      - "dependencies"
+      - "github-actions"
