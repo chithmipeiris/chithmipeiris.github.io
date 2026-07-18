@@ -184,6 +184,20 @@ const projectsHref = withBase('/projects');
     }
   }
 
+  /* Light mode only: an outline in the hero's own background colour. On wide
+     screens the text sits over that same colour, so the stroke is invisible.
+     On small screens, where the text overlaps the portrait, it draws a crisp
+     readable outline around the glyphs. `paint-order: stroke fill` keeps the
+     stroke behind the fill so the letters don't look thinned. Dark mode has
+     enough contrast already. */
+  :global(:root[data-theme='light']) .hero__name,
+  :global(:root[data-theme='light']) .hero__role,
+  :global(:root[data-theme='light']) .hero__social {
+    -webkit-text-stroke: 3px var(--paper-tint);
+    text-stroke: 3px var(--paper-tint);
+    paint-order: stroke fill;
+  }
+
   .intro__text {
     max-width: 62ch;
     margin-inline: auto;
@@ -212,16 +226,16 @@ const projectsHref = withBase('/projects');
     .hero__inner {
       grid-template-columns: 1fr;
     }
-    .hero__media {
-      order: -1; /* image on top when stacked */
-      align-self: auto;
-      margin-bottom: 0;
-    }
-    .hero__image {
-      max-height: 44vh;
-      margin-inline: auto;
+    /* Instead of stacking, overlap the portrait and the text in a single grid
+       cell — the portrait stays bottom-anchored like on desktop, and the text
+       sits on top of it. Text readability over the image is tuned later via the
+       image opacity. */
+    .hero__media,
+    .hero__content {
+      grid-area: 1 / 1;
     }
     .hero__content {
+      z-index: 1; /* text above the image */
       align-items: flex-start;
       gap: 1.75rem;
     }
