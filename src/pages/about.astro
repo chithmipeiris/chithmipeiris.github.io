@@ -16,7 +16,13 @@ const resumeHref = asset(site.resume);
     <div class="container about__grid">
       <div class="about__text">
         <h1 class="section-kicker">About Me</h1>
-        <p class="lead">{site.about}</p>
+        <p class="about__tagline">{site.aboutTagline}</p>
+
+        <div class="about__prose">
+          {site.about.map((para) => <p class="lead">{para}</p>)}
+        </div>
+
+        <p class="about__signature">~ {site.aboutSignature}</p>
 
         <ul class="about__tags" aria-label="Research interests">
           {site.researchInterests.map((r) => <li class="tag">{r}</li>)}
@@ -84,6 +90,33 @@ const resumeHref = asset(site.resume);
     gap: 1.25rem;
     align-items: flex-start;
   }
+  .about__tagline {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-style: italic;
+    font-size: clamp(1rem, 0.92rem + 0.4vw, 1.2rem);
+    line-height: 1.35;
+    color: var(--forest);
+    margin: 0;
+  }
+  .about__prose {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .about__prose .lead {
+    margin: 0;
+    font-size: clamp(0.92rem, 0.88rem + 0.28vw, 1.02rem);
+    line-height: 1.7;
+  }
+  .about__signature {
+    font-family: var(--font-signature);
+    font-weight: 700;
+    font-size: clamp(1.5rem, 1.2rem + 1.2vw, 2.1rem);
+    line-height: 1;
+    color: var(--forest);
+    margin: 0.25rem 0 0;
+  }
   .about__tags {
     display: flex;
     flex-wrap: wrap;
@@ -97,11 +130,19 @@ const resumeHref = asset(site.resume);
   .about__portrait .img-box {
     aspect-ratio: 4 / 5;
   }
-  /* Transparent-background portrait: sits directly on the page, no frame/box. */
+  /* Pin the portrait to the top of its column instead of letting it float to
+     the vertical centre of the (much taller) text column. Text is unaffected —
+     only the portrait's own alignment/size changes. */
+  .about__portrait {
+    align-self: start;
+  }
+  /* Transparent-background portrait: sits directly on the page, no frame/box.
+     Sized by height and right-aligned so it sits in the upper-right area. */
   .about__portrait-img {
     display: block;
-    width: 100%;
+    width: 125%;
     height: auto;
+    margin: 2.5rem 0 0 auto;
     object-fit: contain;
   }
 
@@ -151,6 +192,11 @@ const resumeHref = asset(site.resume);
     .about__portrait {
       order: -1;
       max-width: 420px;
+    }
+    .about__portrait-img {
+      width: 100%;
+      max-height: none;
+      margin: 0 auto;
     }
   }
 </style>

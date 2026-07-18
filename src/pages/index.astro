@@ -108,20 +108,29 @@ const projectsHref = withBase('/projects');
   .hero__inner {
     position: relative;
     display: grid;
-    grid-template-columns: 1.1fr 0.9fr; /* blended image | text */
+    grid-template-columns: 1.15fr 0.85fr; /* blended image | text */
     align-items: center;
     gap: clamp(1rem, 4vw, 3rem);
     padding-block: clamp(2rem, 6vh, 4.5rem);
     padding-inline: clamp(1.25rem, 5vw, 3.5rem);
     width: 100%;
   }
-  /* Blended banner image — no box/frame, transparent edges melt into the page. */
+  /* Anchor the portrait to the bottom of the hero — the negative margin pulls
+     it flush with where the hero section ends (the inner's bottom padding). */
+  .hero__media {
+    align-self: end;
+    margin-bottom: calc(-1 * clamp(2rem, 6vh, 4.5rem));
+  }
+  /* Blended portrait — no box/frame, transparent edges melt into the page.
+     Slightly faded for a subtle, professional look. */
   .hero__image {
     display: block;
     width: 100%;
     height: auto;
-    max-height: min(72vh, 640px);
+    max-height: min(88vh, 800px);
     object-fit: contain;
+    object-position: bottom;
+    opacity: var(--hero-image-opacity);
   }
   .hero__content {
     display: flex;
@@ -205,6 +214,8 @@ const projectsHref = withBase('/projects');
     }
     .hero__media {
       order: -1; /* image on top when stacked */
+      align-self: auto;
+      margin-bottom: 0;
     }
     .hero__image {
       max-height: 44vh;

@@ -24,7 +24,9 @@ population genetics, molecular breeding, and functional genomics research in bla
 
 ## Background
 
-*Piper nigrum* is one of the world's most economically important spice crops and has become
+Black pepper is one of Sri Lanka's major export spice crops and is second only to cinnamon
+in terms of spice export value. Sri Lankan pepper is particularly valued because it contains
+relatively high levels of piperine, the alkaloid responsible for its pungency. It has become
 an increasingly valuable model for studies on genetic diversity, cultivar improvement, and
 piperine biosynthesis. However, successful molecular analyses depend on the isolation of
 intact, contaminant-free genomic DNA, which is particularly difficult in black pepper
@@ -83,27 +85,5 @@ genomics research.
 ![DNA yield by lysis buffer and grinding method](/images/projects/genomic-dna-black-pepper/yield-boxplot.jpg)
 *DNA yield by lysis buffer and grinding method (LN = liquid nitrogen, S = standard) — used to identify the optimal protocol.*
 
-## Impact & Scientific Contributions
-
-- Systematically evaluated six genomic DNA extraction protocols for *Piper nigrum*.
-- Developed an optimised CTAB-based extraction workflow for high-quality genomic DNA
-  isolation.
-- Identified the synergistic role of NaCl, LiCl, and PVP in improving DNA purity and
-  downstream PCR performance.
-- Demonstrated that DNA quality is a more reliable indicator than DNA concentration alone for
-  molecular applications.
-- Established a reproducible and cost-effective alternative to commercial DNA extraction kits
-  for black pepper molecular research.
-
 The findings were presented at the 43rd Annual Sessions of the Institute of Biology, Sri
 Lanka — see the [Publications](/publications) page.
-
-## Technical Expertise
-
-- Plant genomic DNA extraction and CTAB protocol optimisation
-- Plant tissue disruption methodologies
-- PCR optimisation and validation
-- Agarose gel electrophoresis
-- DNA quantification and quality assessment
-- Comparative protocol evaluation and experimental optimisation
-- Molecular biology workflow development

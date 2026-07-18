@@ -70,40 +70,27 @@ biosafety evaluation, and process scale-up for marine bacterial pigment producti
 ![A brown seaweed (Padina sp.) sample collected from the intertidal zone](/images/projects/marine-pigmented-bacteria/seaweed-sample.jpg)
 *Collecting a brown seaweed (Padina sp.) sample — the source of the pigment-producing bacteria.*
 
-## Impact & Scientific Contributions
+## Impact & Scientific Contribution
 
-- Demonstrated the antioxidant and UV-protective potential of pigments produced by marine
-  brown-seaweed–associated bacteria.
-- Established a comparative framework for the discovery and functional characterisation of
-  chromogenic marine bacteria associated with *Padina* sp.
-- Performed preliminary biosafety assessment of marine bacterial pigments using the
-  zebrafish (*Danio rerio*) embryo model, supporting their potential for cosmetic and
-  biomedical applications.
-- Designed and developed a laboratory-scale bioreactor system to optimise cultivation
-  conditions and facilitate scalable production of chromogenic marine bacteria.
-- Expanded the scientific understanding of Sri Lanka's marine microbial resources as a
-  source of sustainable bioactive pigments.
-- Contributed to marine biotechnology through the scholarly review *“From Ocean to Industry:
-  Novel Bio-Innovations with Marine Bacterial Pigments,”* highlighting emerging industrial
-  and commercialisation opportunities for marine microbial pigments.
-- Established a reproducible laboratory workflow integrating microbial isolation, pigment
-  extraction, functional bioactivity assessment, biosafety evaluation, and bioprocess
-  development for marine bacterial natural products.
+This research investigated several chromogenic marine bacterial species associated with the
+brown seaweed *Padina* sp., including *Micrococcus* sp., *Brevibacterium* sp., and
+*Chromohalobacter* sp., to evaluate their potential as sustainable sources of high-value
+natural pigments. Functional characterisation demonstrated that these bacterial pigments
+possess significant antioxidant and UV-protective activities, highlighting their promise as
+naturally derived bioactive ingredients for next-generation cosmeceutical formulations.
+Their translational potential was further supported through a preliminary biosafety
+assessment using the zebrafish (*Danio rerio*) embryo model, which provided initial evidence
+of their suitability for cosmetic and biomedical applications.
 
 ![Fieldwork on the southern coast of Sri Lanka](/images/projects/marine-pigmented-bacteria/fieldwork.jpg)
 *Fieldwork on the southern coast of Sri Lanka.*
 
-## Technical Expertise
-
-- Marine microbial isolation and cultivation
-- Screening of chromogenic bacteria
-- Molecular bacterial identification (16S rRNA gene sequencing)
-- Microbial fermentation and pigment production
-- Laboratory-scale bioreactor design and process optimisation
-- Scale-up strategy for microbial cultivation
-- Solvent-based pigment extraction
-- Antioxidant activity evaluation and UV-protection assessment
-- Zebrafish (*Danio rerio*) embryo toxicity assays
-- Spectrophotometric pigment characterisation
-- Experimental design and statistical analysis
-- Marine biotechnology and microbial natural product discovery
+To address the challenges of scalable production, a laboratory-scale bioreactor system was
+designed and developed to optimise cultivation conditions and facilitate the sustainable
+mass production of chromogenic marine bacteria. Collectively, this work expands the
+scientific understanding of Sri Lanka's marine microbial biodiversity as a valuable
+reservoir of bioactive pigments with industrial relevance. In addition, the project
+contributed to the advancement of marine biotechnology through the scholarly review *From
+Ocean to Industry: Novel Bio-Innovations with Marine Bacterial Pigments*, which critically
+synthesises current knowledge and explores emerging industrial applications and
+commercialisation opportunities for marine microbial pigments.

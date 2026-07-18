@@ -33,6 +33,7 @@
   /* Typography */
   --font-display: 'Space Grotesk', system-ui, -apple-system, sans-serif;
   --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-signature: 'Dancing Script', 'Segoe Script', cursive;
 
   /* Layout */
   --maxw: 1200px;
@@ -44,6 +45,9 @@
 
   /* Motion */
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
+
+  /* Hero portrait fade — lighter on the light theme, more ghosted on dark. */
+  --hero-image-opacity: 0.84;
 }
 
 /* ============================================================
@@ -54,6 +58,8 @@
    --on-forest.
    ============================================================ */
 :root[data-theme='dark'] {
+  --hero-image-opacity: 0.6;
+
   --paper: #0f1512;
   --paper-soft: #151d18;
   --paper-tint: #17231b;

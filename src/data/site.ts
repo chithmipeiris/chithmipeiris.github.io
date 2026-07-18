@@ -29,17 +29,33 @@ export const site = {
     'translating bioactive compounds from microorganisms into sustainable solutions for ' +
     'biotechnology and industrial applications.',
 
-  // Longer "About Me" paragraph on the About page.
-  about:
-    'I am a microbiologist-in-training with a First Class Honours degree in Plant ' +
-    'Biotechnology and an ongoing MPhil in Microbiology (Research). My work sits at the ' +
-    'intersection of marine microbiology, natural product discovery and biotechnology — ' +
-    'isolating and characterising pigment-producing microbes, optimising fermentation, and ' +
-    'evaluating their bioactive potential through chromatographic and spectroscopic techniques. ' +
-    'I am experienced in microbial isolation, fermentation optimisation, molecular ' +
-    'characterisation, and analytical methods including TLC, UV-Vis, FTIR and NMR. Looking ' +
-    'ahead, I hope to pursue PhD research that deepens this work and helps translate ' +
-    'sustainable microbial products into real-world industrial and biomedical applications.',
+  // A short, personal tagline shown above the "About Me" narrative.
+  aboutTagline: 'Inspired by nature. Driven by discovery.',
+
+  // "About Me" narrative on the About page — one entry per paragraph.
+  about: [
+    'The wonder in my eyes whenever I immersed myself in nature as a child has always ' +
+      'encouraged me to explore it through a scientific lens. Today, that same curiosity ' +
+      'drives me to discover the hidden marvels of the natural world.',
+    'My journey began at the University of Colombo, Sri Lanka, where I completed my BSc ' +
+      '(Hons) in Plant Biotechnology with First Class Honours in 2024. After graduation, I ' +
+      'joined my university as a Graduate Teaching Assistant, where I had the privilege of ' +
+      'guiding and inspiring many young science students. I truly enjoyed teaching and ' +
+      'sharing knowledge; however, a deep part of my heart still belonged to research and ' +
+      'scientific exploration.',
+    'Driven by this passion, I joined the University of Sri Jayewardenepura, Sri Lanka in ' +
+      '2025, to begin my postgraduate journey through an MPhil in Microbiology (Research). ' +
+      'Working as a Graduate Research Assistant under university grants has enriched me with ' +
+      'valuable hands-on research experiences, opportunities to present my work at ' +
+      'conferences, and contributions to scientific publications.',
+    'As I approach the completion of this chapter, I carry a deep desire to expand my ' +
+      'research journey beyond this point. I believe pursuing a PhD will strengthen my ' +
+      'vision, broaden my scientific capabilities, and allow me to contribute further to the ' +
+      'field of biotechnology.',
+  ],
+
+  // Signature shown at the end of the "About Me" narrative.
+  aboutSignature: 'Chithmi Tharika Peiris',
 
   // Research interests — rendered as tags on the homepage and About page.
   researchInterests: [
@@ -59,7 +75,7 @@ export const site = {
   // To use a real image, drop the file in public/images/ and set the path here,
   // e.g. hero: '/images/hero.jpg'
   images: {
-    hero: '/images/hero.png', // blended banner image shown beside the name on the homepage
+    hero: '/images/hero-portrait.png', // blended portrait image shown beside the name on the homepage
     portrait: '/images/aboutme-image.png', // portrait shown in the "About Me" section
   },
 

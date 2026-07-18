@@ -95,31 +95,6 @@ Collectively, the project established an integrated discovery-to-characterisatio
 that combines microbial prospecting, process optimisation, analytical chemistry, and
 industrial feasibility assessment for sustainable fungal pigment production.
 
-## Scientific Contributions
-
-- First report of the rare anthraquinone pigment austrocortirubin from a lagoon
-  lichen-associated *Talaromyces verruculosus* isolated in Sri Lanka.
-- Developed and optimised a species-specific extraction protocol for efficient recovery of
-  austrocortirubin from submerged fungal cultures.
-- Optimised submerged fermentation parameters to enhance fungal pigment biosynthesis.
-- Confirmed pigment identity through integrated spectroscopic characterisation using
-  UV–Visible, FTIR, and ¹H-NMR analyses.
-- Demonstrated exceptional thermal and pH stability, supporting the pigment's suitability
-  for sustainable industrial applications.
-- Established a reproducible laboratory workflow that bridges microbial natural product
-  discovery with downstream biotechnological development.
-
 This work has also been developed into a book chapter and a preprint article on sustainable
 fungal-derived dyes, and presented at the International Forestry and Environment Symposium —
 see the [Publications](/publications) page.
-
-## Technical Expertise
-
-- Natural product discovery from microbial resources
-- Microbial strain screening and selection
-- Fungal fermentation and bioprocess optimisation
-- Solvent extraction and protocol development
-- Thin Layer Chromatography (TLC)
-- UV–Visible, FTIR and ¹H-NMR spectroscopy
-- Experimental design and statistical analysis
-- Sustainable biotechnology and microbial bioprocess development

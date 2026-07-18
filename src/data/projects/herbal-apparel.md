@@ -30,6 +30,27 @@ product into a globally competitive sustainable textile sector.
 
 ## Background
 
+Herbal clothing is dyed exclusively with botanical extracts rather than chemicals. Herbal
+dyeing is a derivation of natural dyeing, as it mainly utilises herbal plant materials with
+medicinal properties. Herbs not only provide colours but also retain their therapeutic
+properties when applied to fabric using natural ingredients. Colour fixing is likewise
+achieved with natural dye mordants, and fabric bleaching after dyeing is accomplished through
+sunlight exposure, eliminating the need for chemical bleaching agents. The origin of herbal
+textiles is rooted in Ayurveda — a traditional system of healthcare dating back to around
+1000 BC — practised across the Indian subcontinent in countries such as India, Sri Lanka,
+Nepal and Bhutan.
+
+Skin is the largest sensory organ in the human body, serving both as a protective barrier
+and as a route of entry for certain substances. Environmental toxins and chemicals often
+accumulate in conventional clothing and can permeate the body through the skin. Strengthening
+the skin's resistance to such harmful agents can therefore enhance overall metabolism and
+health. Because of the intimate contact between herbal clothing and the skin, radiated body
+heat activates the infused herbal molecules within the fabric, reflecting them back to the
+body. As these molecules are absorbed and transported through the bloodstream, they penetrate
+deep into the body, offering a wide range of therapeutic effects and contributing to the
+treatment of diverse ailments such as hypertension, heart conditions, asthma, skin diseases
+and diabetes.
+
 Despite Sri Lanka's rich biodiversity, strong textile manufacturing infrastructure, and
 centuries-old traditions of natural dyeing, limited research has examined the commercial
 viability, consumer acceptance, and production challenges associated with herbal apparel.
@@ -89,6 +110,9 @@ production economies. The study documented how manufacturing residues are recycl
 biofertilisers and agricultural inputs, creating environmentally and socially sustainable
 production networks.
 
+![Herbal-treated textiles blending traditional craft with sustainable fashion](/images/projects/herbal-apparel/textiles.jpg)
+*Herbal-treated textiles — blending traditional craft with sustainable, health-oriented fashion.*
+
 A critical finding of the research was the identification of a major technological gap
 within the industry. While current production systems successfully utilise traditional
 herbal dyeing approaches, advanced textile technologies such as microencapsulation,
@@ -102,33 +126,3 @@ manufacturing development.
 
 ![Sihala Salu herbal apparel — recognised in the Derana STARTUP 2021 programme](/images/projects/herbal-apparel/startup-certificate.jpg)
 *Herbal apparel enterprises gaining recognition — a Derana STARTUP 2021 commendation for Sihala Salu Products.*
-
-## Scientific & Industry Contributions
-
-- Conducted one of the first comprehensive assessments of Sri Lanka's emerging herbal
-  apparel industry.
-- Evaluated consumer awareness, purchasing behaviour, and market readiness for sustainable
-  biofunctional textiles.
-- Mapped the complete herbal apparel value chain through field-based industry
-  investigations.
-- Identified key production bottlenecks affecting scalability, market penetration, and
-  international competitiveness.
-- Assessed sustainability practices within herbal apparel manufacturing systems.
-- Recognised advanced textile technologies, including microencapsulation and
-  controlled-release finishing systems, as future innovation opportunities.
-- Developed evidence-based recommendations for industry expansion, consumer education, and
-  technology adoption.
-
-![Herbal-treated textiles blending traditional craft with sustainable fashion](/images/projects/herbal-apparel/textiles.jpg)
-*Herbal-treated textiles — blending traditional craft with sustainable, health-oriented fashion.*
-
-## Technical Expertise
-
-- Market research and consumer behaviour analysis
-- Survey design and implementation
-- Stakeholder engagement and qualitative interviewing
-- Sustainable fashion and textile systems analysis
-- Industry value-chain assessment and innovation landscape mapping
-- Sustainability evaluation and research gap identification
-- Strategic technology forecasting
-- Science communication and interdisciplinary research
